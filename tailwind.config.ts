@@ -32,7 +32,7 @@ export default <Partial<Config>>{
         'georgia': ['Georgia', 'serif'],
       },
       colors: {
-        primary: 'teal-600'
+        primary: 'purple-600'
       },
     },
   },
