@@ -34,7 +34,7 @@ onMounted(() => {
 <template>
     <section>
         <div class="h-[90vh] text-center flex flex-col items-center justify-center font-trebuchet text-dark gap-y-5">
-            <h1 class="text-8xl">
+            <h1 class="text-8xl font-semibold">
                 I'm <span class="text-primary">Ayush Jaiswal</span>
             </h1>
             <span ref="view" class="text-xl"></span>
