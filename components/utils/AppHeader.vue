@@ -31,6 +31,10 @@ const links: Link[] = [
     }
 ]
 
+const route = useRoute();
+
+const activeHeader = computed(() => links.find(link => link.to === route.path) || {label: '', to: ''})
+
 export interface Link {
     label: string,
     to: string,
@@ -45,7 +49,9 @@ export interface Link {
             Logo
         </div>
         <ul class="md:flex justify-center gap-x-10 items-center text-lg text-gray-800 dark:text-gray-100 w-full lg:col-span-2 hidden py-2">
-            <li class="hover:text-primary cursor-pointer" v-for="link in links">
+            <li class="hover:text-primary cursor-pointer px-3" v-for="link in links"
+                :class="{'active-header': activeHeader.label === link.label}"
+            >
                 <NuxtLink :to="link.to">{{link.label}}</NuxtLink>
             </li>
         </ul>
@@ -71,4 +77,7 @@ export interface Link {
 
 <style scoped>
 
+.active-header {
+    @apply text-purple-700 bg-gradient-to-r from-purple-200 via-purple-400 to-purple-500 border-r-4 border-purple-700;
+}
 </style>
