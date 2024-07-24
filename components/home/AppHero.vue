@@ -7,6 +7,8 @@ const items: string[] = [
     "Android Developer"
 ];
 
+let currentIndex = ref<number>(0);
+
 const view = ref<HTMLElement>();
 
 onMounted(() => {
@@ -17,6 +19,8 @@ onMounted(() => {
         if (element) {
             setInterval(() => {
                 element.innerText = items[i++];
+                element?.classList.remove('animate-start');
+                void element?.offsetWidth;
                 element?.classList.add('animate-start');
                 if (i === items.length) {
                     i = 0;
@@ -41,7 +45,7 @@ onMounted(() => {
 <style scoped>
 
 .animate-start {
-    animation: top-down 2s ease-in-out infinite;
+    animation: top-down 2s ease-in-out;
 }
 
 @keyframes top-down {
