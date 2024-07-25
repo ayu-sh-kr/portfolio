@@ -43,7 +43,7 @@ export interface Link {
 </script>
 
 <template>
-<header class="font-trebuchet">
+<header class="font-trebuchet fixed top-0 w-full">
     <div class="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 place-items-center place-content-center py-2">
         <div class="text-3xl font-semibold text-primary text-left w-full px-3">
             Logo
