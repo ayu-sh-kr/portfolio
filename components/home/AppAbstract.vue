@@ -22,9 +22,9 @@ export interface AbstractData {
 </script>
 
 <template>
-<section class="px-5 py-2 pb-8 font-trebuchet bg-purple-100">
+<section class="px-5 py-2 font-trebuchet bg-purple-100 dark:bg-purple-300">
     <div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 place-content-center place-items-center">
-        <div v-for="item in items" class="text-center w-2/3">
+        <div v-for="item in items" class="text-center w-2/3 rounded-xl py-10">
             <h1 class="hollow-text text-8xl py-5">{{item.point}}</h1>
             <h1 class="text-2xl font-semibold text-gray-900 dark:text-gray-900">{{item.label}}</h1>
             <p class="font-light text-lg dark:text-gray-700">
