@@ -10,9 +10,10 @@
             <div class="text-center">
                 <h1 class="text-4xl text-center tracking-wide leading-normal">Software Engineer and Life Long Learner</h1>
                 <div class="flex gap-x-5 justify-center gap-y-3">
-                    <UBadge label="Backend Developer" color="green" variant="soft"/>
-                    <UBadge label="Frontend Developer" color="pink" variant="soft"/>
+                    <UBadge label="Backend Developer" color="fuchsia" variant="soft"/>
+                    <UBadge label="Frontend Developer" color="amber" variant="soft"/>
                     <UBadge label="Data Scrapper" color="emerald" variant="soft"/>
+                    <UBadge label="Android Developer" color="blue" variant="soft"/>
                 </div>
                 <p class="text-lg font-light text-gray-800 dark:text-gray-200 py-5">
                     Hello there, I'm <strong class="text-primary font-semibold">Ayush Jaiswal</strong>, Software Engineer, Developing Web Apps, Android Apps and Data Scrapper based in <strong class="text-primary font-semibold">Varanasi, India</strong>.
