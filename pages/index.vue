@@ -6,9 +6,11 @@ import AboutMe from "~/components/home/AboutMe.vue";
 </script>
 
 <template>
-    <AppHero/>
-    <AppAbstract/>
-    <AboutMe/>
+    <div class="scroll-container">
+        <AppHero/>
+        <AppAbstract/>
+        <AboutMe/>
+    </div>
 </template>
 
 <style scoped>
