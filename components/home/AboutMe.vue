@@ -8,14 +8,14 @@
 
         <div class="py-20 grid sm:grid-cols-2 grid-cols-1 h-[90%] place-items-center">
             <div class="text-center">
-                <h1 class="text-4xl text-center tracking-wide leading-normal">Software Engineer and Life Long Learner</h1>
+                <h1 class="lg:text-4xl md:text-3xl text-2xl text-center tracking-wide leading-normal">Software Engineer and Life Long Learner</h1>
                 <div class="flex gap-x-5 justify-center gap-y-3">
                     <UBadge label="Backend Developer" color="fuchsia" variant="soft"/>
                     <UBadge label="Frontend Developer" color="amber" variant="soft"/>
                     <UBadge label="Data Scrapper" color="emerald" variant="soft"/>
                     <UBadge label="Android Developer" color="blue" variant="soft"/>
                 </div>
-                <p class="text-lg font-light text-gray-800 dark:text-gray-200 py-5">
+                <p class="md:text-lg text-sm font-light text-gray-800 dark:text-gray-200 py-5">
                     Hello there, I'm <strong class="text-primary font-semibold">Ayush Jaiswal</strong>, Software Engineer, Developing Web Apps, Android Apps and Data Scrapper based in <strong class="text-primary font-semibold">Varanasi, India</strong>.
                     I specialize in Java and Spring Boot. I use Kotlin Multiplatform using Compose for <span class="text-primary font-semibold">Cross Platform</span> mobile app development.
                     <br>
@@ -23,7 +23,7 @@
                 </p>
             </div>
             <div class="flex justify-center items-center h-full">
-                <div class="h-96 w-96 bg-emerald-800 rounded-full"></div>
+                <div class="lg:h-96 lg:w-96 md:h-80 md:w-80 h-72 w-72 bg-emerald-800 rounded-full"></div>
             </div>
         </div>
     </section>
