@@ -7,8 +7,6 @@ const items: string[] = [
     "Android Developer"
 ];
 
-let currentIndex = ref<number>(0);
-
 const view = ref<HTMLElement>();
 
 onMounted(() => {
