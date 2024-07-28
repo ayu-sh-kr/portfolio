@@ -6,7 +6,7 @@ import AboutMe from "~/components/home/AboutMe.vue";
 </script>
 
 <template>
-    <div class="scroll-container">
+    <div class="scroll-container" id="scroll-container">
         <AppHero/>
         <AppAbstract/>
         <AboutMe/>
