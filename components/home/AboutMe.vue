@@ -3,10 +3,10 @@
 </script>
 
 <template>
-    <section class="px-5 py-10 font-trebuchet">
+    <section class="px-5 py-10 font-trebuchet h-screen">
         <h1 class="text-primary text-center md:text-4xl sm:text-3xl text-2xl">About Me</h1>
 
-        <div class="py-20 grid sm:grid-cols-2 grid-cols-1 h-[80vh] place-items-center">
+        <div class="py-20 grid sm:grid-cols-2 grid-cols-1 h-[90%] place-items-center">
             <div class="text-center">
                 <h1 class="text-4xl text-center tracking-wide leading-normal">Software Engineer and Life Long Learner</h1>
                 <div class="flex gap-x-5 justify-center gap-y-3">
@@ -21,6 +21,9 @@
                     <br>
                     I help companies in building well designed, easy to maintain and fast backend applications.
                 </p>
+            </div>
+            <div class="flex justify-center items-center h-full">
+                <div class="h-96 w-96 bg-emerald-800 rounded-full"></div>
             </div>
         </div>
     </section>
