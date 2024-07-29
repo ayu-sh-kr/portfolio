@@ -74,13 +74,15 @@ function handleScroll() {
 
 <template>
     <header class="font-trebuchet fixed top-0 w-full">
-        <div class="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 place-items-center place-content-center py-2">
+        <div class="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 place-items-center place-content-center py-2"
+             :class="{'bg-transparent backdrop-blur shadow-none hover:shadow-md animate-up': isScrolled, '': !isScrolled, 'animate-down': headerVisible}"
+        >
             <div class="text-3xl font-semibold text-primary text-left w-full px-3">
                 Logo
             </div>
             <ul class="md:flex justify-center gap-x-10 items-center text-lg text-gray-800 dark:text-gray-100 w-full lg:col-span-2 hidden py-2">
                 <li class="hover:text-primary cursor-pointer px-3" v-for="link in links"
-                    :class="{'active-header': activeHeader.label === link.label, 'bg-transparent backdrop-blur shadow-none hover:shadow-md animate-up': isScrolled, '': !isScrolled, 'animate-down': headerVisible}"
+                    :class="{'active-header': activeHeader.label === link.label}"
                 >
                     <NuxtLink :to="link.to">{{ link.label }}</NuxtLink>
                 </li>
