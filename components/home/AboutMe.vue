@@ -4,7 +4,10 @@
 
 <template>
     <section class="px-5 py-10 font-trebuchet h-screen">
-        <h1 class="text-primary text-center md:text-4xl sm:text-3xl text-2xl">About Me</h1>
+        <div>
+            <p class="text-sm lg:text-lg text-purple-400 font-extralight text-center">Get To Know More</p>
+            <h1 class="text-gray-900 dark:text-gray-100 text-center md:text-4xl sm:text-3xl text-2xl">About Me</h1>
+        </div>
 
         <div class="py-20 grid sm:grid-cols-2 grid-cols-1 h-[90%] place-items-center">
             <div class="text-center">
