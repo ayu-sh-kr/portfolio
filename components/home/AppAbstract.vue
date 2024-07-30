@@ -1,5 +1,7 @@
 <script setup lang="ts">
 
+import SectionHeader from "~/components/utils/SectionHeader.vue";
+
 const items: AbstractData[] = [
     {
         label: 'Successful Projects',
@@ -23,11 +25,8 @@ export interface AbstractData {
 
 <template>
 <section class="px-5 py-2 font-trebuchet h-screen">
-    <div>
-        <p class="text-sm lg:text-lg text-purple-400 font-extralight text-center">Know my</p>
-        <h1 class="text-gray-900 dark:text-gray-100 text-center md:text-4xl sm:text-3xl text-2xl">Achievements</h1>
-    </div>
-    <div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 place-content-center place-items-center h-[90%] gap-y-5">
+    <SectionHeader secondary="Know My" primary="Achievements" />
+    <div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 place-content-center place-items-center h-[90%] gap-y-5 py-10">
         <div v-for="item in items" class="text-center w-full md:w-2/3 rounded-xl py-10 bg-white dark:bg-slate-900 border-2 px-3 hover:border-primary duration-500">
             <h1 class="hollow-text text-8xl py-5">{{item.point}}</h1>
             <h1 class="text-2xl font-semibold text-gray-900 dark:text-gray-100">{{item.label}}</h1>
@@ -42,7 +41,7 @@ export interface AbstractData {
 <style scoped>
 
 .hollow-text {
-    @apply font-bold text-transparent bg-clip-text bg-blue-100;
+    @apply font-bold text-transparent bg-clip-text bg-primary;
     -webkit-text-stroke: 1px black;
 }
 
