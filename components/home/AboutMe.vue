@@ -1,13 +1,12 @@
 <script setup lang="ts">
 
+import SectionHeader from "~/components/utils/SectionHeader.vue";
 </script>
 
 <template>
     <section class="px-5 py-10 font-trebuchet h-screen">
-        <div>
-            <p class="text-sm lg:text-lg text-purple-400 font-extralight text-center">Get To Know More</p>
-            <h1 class="text-gray-900 dark:text-gray-100 text-center md:text-4xl sm:text-3xl text-2xl">About Me</h1>
-        </div>
+
+        <SectionHeader secondary="Get To Know More" primary="About Me" />
 
         <div class="py-20 grid sm:grid-cols-2 grid-cols-1 h-[90%] place-items-center">
             <div class="text-center">
@@ -18,7 +17,7 @@
                     <UBadge label="Data Scrapper" color="emerald" variant="soft"/>
                     <UBadge label="Android Developer" color="blue" variant="soft"/>
                 </div>
-                <p class="md:text-lg text-sm font-light text-gray-800 dark:text-gray-200 py-5">
+                <p class="md:text-lg text-sm text-gray-800 dark:text-gray-200 py-5 font-extralight">
                     Hello there, I'm <strong class="text-primary font-semibold">Ayush Jaiswal</strong>, Software Engineer, Developing Web Apps, Android Apps and Data Scrapper based in <strong class="text-primary font-semibold">Varanasi, India</strong>.
                     I specialize in Java and Spring Boot. I use Kotlin Multiplatform using Compose for <span class="text-primary font-semibold">Cross Platform</span> mobile app development.
                     <br>
