@@ -46,24 +46,15 @@ let currentPos = ref<number>(0);
 let headerVisible = ref(true);
 
 onMounted(() => {
-    // window.addEventListener('scroll', handleScroll);
-    let scrollBox = document.getElementById('scroll-container') as HTMLDivElement;
-    if (scrollBox) {
-        scrollBox.addEventListener('scroll', handleScroll);
-    }
+    window.addEventListener('scroll', handleScroll);
 });
 
 onUnmounted(() => {
-    // window.removeEventListener('scroll', handleScroll);
-    let scrollBox = document.getElementById('scroll-container') as HTMLDivElement
-    if (scrollBox) {
-        scrollBox.removeEventListener('scroll', handleScroll);
-    }
+    window.removeEventListener('scroll', handleScroll);
 });
 
 function handleScroll() {
-    let scrollBox = document.getElementById('scroll-container') as HTMLDivElement
-    isScrolled.value = scrollBox.scrollTop > 50;
+    isScrolled.value = scrollY > 50;
     console.log(isScrolled.value)
     headerVisible.value = currentPos.value > scrollY;
     setTimeout(() => {
@@ -110,7 +101,7 @@ function handleScroll() {
 <style scoped>
 
 .active-header {
-    @apply text-purple-700 bg-gradient-to-r from-purple-200 via-purple-400 to-purple-500 border-r-4 border-purple-700;
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-purple-300 via-purple-500 to-purple-700;
 }
 
 .animate-up {
