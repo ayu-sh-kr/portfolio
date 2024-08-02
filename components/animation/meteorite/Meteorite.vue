@@ -1,55 +1,87 @@
 <script setup lang="ts">
+const props = defineProps({
+    startTop: {
+        type: String,
+        required: true
+    },
+    startLeft: {
+        type: String,
+        required: true
+    },
+    endTop: {
+        type: String,
+        required: true
+    },
+    endLeft: {
+        type: String,
+        required: true
+    },
+    duration: {
+        type: Number,
+        required: true
+    }
+});
+
+const meteorite = ref<HTMLSpanElement>();
+
+onMounted(() => {
+    if(meteorite.value) {
+        meteorite.value.style.setProperty('--start-top', props.startTop);
+        meteorite.value.style.setProperty('--start-left', props.startLeft);
+        meteorite.value.style.setProperty('--end-top', props.endTop);
+        meteorite.value.style.setProperty('--end-left', props.endLeft)
+        meteorite.value.style.setProperty('--animation-duration', props.duration + 's');
+    }
+
+})
 
 </script>
 
 <template>
-<span class="meteorite">
-    <span class="burning-tail"></span>
+<span ref="meteorite" class="meteorite" :style="{
+    top: startTop,
+    left: startLeft,
+    animationDuration: duration + 's',
+    '--start-top': startTop,
+    '--start-left': startLeft,
+    '--end-top': endTop,
+    '--end-left': endLeft
+}">
+<!--    <span class="burning-tail"></span>-->
 </span>
 </template>
 
 <style scoped>
-
-:root {
-    --meteorite-speed: 2s;
-    --top-position: 0;
-    --left-position: 50%;
-    --translate-X: -50%;
-}
-
 .meteorite {
+    @apply dark:bg-white bg-black shadow-xl dark:shadow-white shadow-black;
     position: absolute;
-    top: var(--top-position);
-    left: var(--left-position);
-    transform: translateX(var(--translate-X)) rotate(180deg);
-    background-color: #ff5722; /* Meteorite color */
     border-radius: 50%;
     width: 20px;
     height: 20px;
-    animation: fall var(--meteorite-speed) linear infinite;
-    box-shadow: 0 0 10px rgba(255, 87, 34, 0.8), 0 0 20px rgba(255, 87, 34, 0.6), 0 0 30px rgba(255, 87, 34, 0.4);
+    animation: fall linear infinite;
     z-index: 1; /* Ensure meteorite is in front */
 }
 
 @keyframes fall {
     0% {
-        top: -20px;
+        top: var(--start-top);
+        left: var(--start-left);
         opacity: 1;
     }
     100% {
-        top: 100vh;
-        opacity: 0;
+        top: var(--end-top);
+        left: var(--end-left);
+        opacity: 0.7;
     }
 }
 
 .burning-tail {
+    @apply dark:bg-white bg-black shadow-xl dark:shadow-white shadow-black;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translateX(-50%);
+    transform: rotate(45deg); /* Align tail with fall direction */
     width: 5px;
-    height: 100px;
-    background: linear-gradient(to bottom, rgba(255, 87, 34, 0.8), rgba(255, 87, 34, 0));
     border-radius: 50%;
     animation: burn 2s linear infinite;
     z-index: 0; /* Ensure tail is behind */
@@ -57,12 +89,12 @@
 
 @keyframes burn {
     0% {
-        height: 50px;
+        height: 100px;
         opacity: 1;
     }
     100% {
-        height: 0;
-        opacity: 0;
+        height: 35px;
+        opacity: 0.5;
     }
 }
 </style>
