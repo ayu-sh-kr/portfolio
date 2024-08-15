@@ -1,5 +1,7 @@
 <script setup lang="ts">
 
+import MeteoriteAnimation from "~/components/animation/meteorite/MeteoriteAnimation.vue";
+
 const items: string[] = [
     "Software Developer",
     "Web Developer",
@@ -30,13 +32,14 @@ onMounted(() => {
 </script>
 
 <template>
-    <section>
-        <div class="min-h-screen text-center flex flex-col items-center justify-center font-trebuchet text-dark gap-y-5">
+    <section class="relative">
+        <div class="absolute inset-1 bg-transparent min-h-screen text-center flex flex-col items-center justify-center font-trebuchet text-dark gap-y-5 z-10">
             <h1 class="text-8xl font-semibold">
                 I'm <span class="text-primary">Ayush Jaiswal</span>
             </h1>
             <span ref="view" class="text-xl"></span>
         </div>
+        <MeteoriteAnimation class="absolute z-0"/>
     </section>
 </template>
 
