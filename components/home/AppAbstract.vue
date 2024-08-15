@@ -24,9 +24,9 @@ export interface AbstractData {
 </script>
 
 <template>
-<section class="px-5 py-2 font-trebuchet h-screen">
+<section class="font-trebuchet max-w-7xl mx-auto">
     <SectionHeader secondary="Know My" primary="Achievements" />
-    <div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 place-content-center place-items-center h-[90%] gap-y-5 py-10">
+    <div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 h-[90%] gap-y-5 py-10">
         <div v-for="item in items" class="text-center w-full md:w-2/3 rounded-xl py-10 bg-white dark:bg-slate-900 border-2 px-3 hover:border-primary duration-500">
             <h1 class="hollow-text text-8xl py-5">{{item.point}}</h1>
             <h1 class="text-2xl font-semibold text-gray-900 dark:text-gray-100">{{item.label}}</h1>
