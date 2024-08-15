@@ -17,7 +17,7 @@ const props = defineProps({
         required: true
     },
     duration: {
-        type: Number,
+        type: String,
         required: true
     }
 });
@@ -53,11 +53,11 @@ onMounted(() => {
 
 <style scoped>
 .meteorite {
-    @apply dark:bg-white bg-black shadow-xl dark:shadow-white shadow-black;
+    @apply dark:bg-slate-300 bg-slate-700 shadow-xl dark:shadow-white shadow-black;
     position: absolute;
     border-radius: 50%;
-    width: 20px;
-    height: 20px;
+    width: 8px;
+    height: 8px;
     animation: fall linear infinite;
     z-index: 1; /* Ensure meteorite is in front */
 }
@@ -71,7 +71,7 @@ onMounted(() => {
     100% {
         top: var(--end-top);
         left: var(--end-left);
-        opacity: 0.7;
+        opacity: 1;
     }
 }
 
