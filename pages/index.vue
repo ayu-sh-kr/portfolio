@@ -10,7 +10,6 @@ import MeteoriteAnimation from "~/components/animation/meteorite/MeteoriteAnimat
     <AppHero/>
     <AppAbstract/>
     <AboutMe/>
-    <MeteoriteAnimation/>
 </template>
 
 <style scoped>
