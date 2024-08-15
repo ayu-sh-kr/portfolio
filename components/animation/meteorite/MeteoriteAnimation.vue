@@ -4,19 +4,31 @@ import Meteorite from '~/components/animation/meteorite/Meteorite.vue';
 
 const meteorites = ref<MeteoriteData[]>([]);
 
-function generateMeteoriteProperties(): MeteoriteData {
-    const duration = Math.random() * 3 + 1; // Random duration between 1s and 4s
+function generateMeteoriteProperties(startTopOffset: number): MeteoriteData {
+    const duration = (Math.random() * 3 + 1).toFixed(2); // Constant duration for all meteorites
     const startLeft = '0vw'; // Fixed start position
     const endLeft = '100vw'; // Fixed end position
-    const startTop = (Math.random() * -100 - 20) + 'px'; // Random start height above the viewport
-    const endTop = '100vh'; // End just below the viewport
+    const startTop = startTopOffset + 'px'; // Start height with offset
+    const endTop = `calc(100vh + ${startTopOffset}px)`; // End height with offset
 
     return { duration, startLeft, endLeft, startTop, endTop };
 }
 
-function createMeteorites(count: number) {
-    for (let i = 0; i < count; i++) {
-        meteorites.value.push(generateMeteoriteProperties());
+function createMeteorites() {
+    const centerStartTop = -20; // Center meteorite start height above the viewport
+    const offsetIncrement = 50; // Increment for each meteorite's start height
+
+    // Center meteorite
+    meteorites.value.push(generateMeteoriteProperties(centerStartTop));
+
+    // 5 meteorites above the center
+    for (let i = 1; i <= 10; i++) {
+        meteorites.value.push(generateMeteoriteProperties(centerStartTop - i * offsetIncrement));
+    }
+
+    // 5 meteorites below the center
+    for (let i = 1; i <= 8; i++) {
+        meteorites.value.push(generateMeteoriteProperties(centerStartTop + i * offsetIncrement));
     }
 }
 
@@ -25,11 +37,11 @@ export interface MeteoriteData {
     startLeft: string,
     endTop: string,
     endLeft: string,
-    duration: number
+    duration: string
 }
 
 onMounted(() => {
-    createMeteorites(20); // Create 20 meteorites
+    createMeteorites(); // Create meteorites
 });
 </script>
 
