@@ -8,7 +8,7 @@ import SectionHeader from "~/components/utils/SectionHeader.vue";
 
         <SectionHeader secondary="Get To Know More" primary="About Me" />
 
-        <div class="py-20 grid sm:grid-cols-2 grid-cols-1 place-items-center">
+        <div class="py-20 grid sm:grid-cols-2 grid-cols-1 place-items-center gap-8">
             <div class="text-left">
                 <div class="w-full flex flex-col items-start lg:text-8xl md:text-6xl text-5xl">
                     <h1 class="text-left text-wrap w-full md:w-2/3 h-fit font-semibold bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-purple-400 to-purple-300">Learn</h1>
@@ -23,9 +23,9 @@ import SectionHeader from "~/components/utils/SectionHeader.vue";
 
                 <p>I specialize in Java and Spring Boot. I use Kotlin Multiplatform using Compose for <span class="text-primary font-semibold">Cross Platform</span> mobile app development.</p>
 
-                <div class="grid grid-cols-2 pt-10 text-xl place-items-start">
-                    <button class="bg-gradient-to-r from-purple-400 via-purple-500 to-purple-600 py-1 px-3 text-white md:w-2/3 w-full">SCHEDULE MEETING</button>
-                    <button class="py-1 px-3 dark:text-white md:w-2/3 w-full border-4 border-purple-600">ABOUT ME</button>
+                <div class="grid grid-cols-2 pt-10 text-sm sm:text-lg md:text-xl place-content-center gap-x-8">
+                    <button class="bg-gradient-to-r from-purple-400 via-purple-500 to-purple-600 py-1 md:px-3 text-white">SCHEDULE MEETING</button>
+                    <button class="py-1 md:px-3 dark:text-white border-2 border-purple-600">ABOUT ME</button>
                 </div>
 
             </div>
