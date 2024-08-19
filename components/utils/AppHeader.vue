@@ -55,7 +55,6 @@ onUnmounted(() => {
 
 function handleScroll() {
     isScrolled.value = scrollY > 50;
-    console.log(isScrolled.value)
     headerVisible.value = currentPos.value > scrollY;
     setTimeout(() => {
         currentPos.value = scrollY;
