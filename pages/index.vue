@@ -3,12 +3,14 @@
 import AppHero from "~/components/home/AppHero.vue";
 import AppAbstract from "~/components/home/AppAbstract.vue";
 import AboutMe from "~/components/home/AboutMe.vue";
+import AppServices from "~/components/home/AppServices.vue";
 </script>
 
 <template>
     <AppHero/>
     <AppAbstract/>
     <AboutMe/>
+    <AppServices/>
 </template>
 
 <style scoped>
