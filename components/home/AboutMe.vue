@@ -3,6 +3,7 @@
 import SectionHeader from "~/components/utils/SectionHeader.vue";
 import Scaffold from "~/components/utils/Scaffold.vue";
 import BigHeader from "~/components/home/about/BigHeader.vue";
+import ReactiveIcon from "~/components/home/about/ReactiveIcon.vue";
 </script>
 
 <template>
@@ -28,6 +29,14 @@ import BigHeader from "~/components/home/about/BigHeader.vue";
                 <div class="grid grid-cols-2 pt-10 text-sm sm:text-lg md:text-xl place-content-center gap-x-8">
                     <button class="bg-gradient-to-r from-purple-400 via-purple-500 to-purple-600 py-1 md:px-3 text-white">SCHEDULE MEETING</button>
                     <button class="py-1 md:px-3 dark:text-white border-2 border-purple-600">ABOUT ME</button>
+                </div>
+
+                <div class="mt-6 space-x-5 flex items-center">
+                    <ReactiveIcon icon2="logos:spring-icon" icon1="simple-icons:spring" title="Spring Framework"/>
+                    <ReactiveIcon icon2="logos:java" icon1="cib:java" title="Java"/>
+                    <ReactiveIcon icon2="devicon:typescript" icon1="devicon-plain:typescript" title="Typescript"/>
+                    <ReactiveIcon icon2="catppuccin:nuxt" icon1="catppuccin:nuxt-ignore" title="Nuxt"/>
+                    <ReactiveIcon icon2="devicon:tailwindcss" icon1="simple-icons:tailwindcss" title="Tailwindcss"/>
                 </div>
 
             </div>
