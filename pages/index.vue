@@ -8,9 +8,9 @@ import AppServices from "~/components/home/AppServices.vue";
 
 <template>
     <AppHero/>
-    <AppAbstract/>
     <AboutMe/>
     <AppServices/>
+    <AppAbstract/>
 </template>
 
 <style scoped>
