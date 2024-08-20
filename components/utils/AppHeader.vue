@@ -71,11 +71,15 @@ function handleScroll() {
                 Logo
             </div>
             <ul class="md:flex justify-center gap-x-10 items-center text-lg text-gray-800 dark:text-gray-100 w-full lg:col-span-2 hidden py-2">
-                <li class="hover:text-primary cursor-pointer px-3" v-for="link in links"
-                    :class="{'active-header': activeHeader.label === link.label}"
-                >
-                    <NuxtLink :to="link.to">{{ link.label }}</NuxtLink>
-                </li>
+                <template v-for="(link, index) in links" :key="index">
+                    <NuxtLink :to="link.to">
+                        <li class="hover:text-primary cursor-pointer px-3 link"
+                            :class="{'active-header': activeHeader.label === link.label}"
+                        >
+                            {{ link.label }}
+                        </li>
+                    </NuxtLink>
+                </template>
             </ul>
             <div class="flex px-3 gap-x-5 justify-end items-center w-full">
                 <UIcon
@@ -109,5 +113,34 @@ function handleScroll() {
 
 .animate-down {
     @apply transform translate-y-0 duration-700
+}
+
+.link {
+    position: relative;
+    padding-bottom: 5px; /* Adjust as needed */
+}
+
+.link::before,
+.link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    height: 2px; /* Adjust as needed */
+    background-color: currentColor; /* Use the current text color */
+    transition: width 0.3s ease;
+}
+
+.link::before {
+    left: 50%;
+}
+
+.link::after {
+    right: 50%;
+}
+
+.link:hover::before,
+.link:hover::after {
+    width: 50%;
 }
 </style>
