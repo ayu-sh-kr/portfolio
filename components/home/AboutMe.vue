@@ -28,7 +28,7 @@ import ReactiveIcon from "~/components/home/about/ReactiveIcon.vue";
 
                 <div class="grid grid-cols-2 pt-10 text-sm sm:text-lg md:text-xl place-content-center gap-x-8">
                     <button class="bg-gradient-to-r from-purple-400 via-purple-500 to-purple-600 py-1 md:px-3 text-white">SCHEDULE MEETING</button>
-                    <button class="py-1 md:px-3 dark:text-white border-2 border-purple-600">ABOUT ME</button>
+                    <button class="py-1 md:px-3 dark:text-white border-2 border-purple-600 hover:bg-primary">ABOUT ME</button>
                 </div>
 
                 <div class="mt-6 space-x-5 flex items-center">
