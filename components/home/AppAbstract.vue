@@ -1,6 +1,7 @@
 <script setup lang="ts">
 
 import SectionHeader from "~/components/utils/SectionHeader.vue";
+import Scaffold from "~/components/utils/Scaffold.vue";
 
 const items: AbstractData[] = [
     {
@@ -24,7 +25,7 @@ export interface AbstractData {
 </script>
 
 <template>
-<section class="font-trebuchet max-w-7xl mx-auto">
+<Scaffold>
     <SectionHeader secondary="Know My" primary="Achievements" />
     <div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 h-[90%] gap-y-5 py-10">
         <div v-for="item in items" class="text-center w-full md:w-2/3 rounded-xl py-10 bg-white dark:bg-slate-900 border-2 px-3 hover:border-primary duration-500">
@@ -35,7 +36,7 @@ export interface AbstractData {
             </p>
         </div>
     </div>
-</section>
+</Scaffold>
 </template>
 
 <style scoped>
