@@ -9,7 +9,7 @@ const props = defineProps({
 </script>
 
 <template>
-    <section class="py-10 font-trebuchet w-full px-3 sm:px-5 md:px-10"
+    <section class="py-10 md:py-16 font-trebuchet w-full px-3 sm:px-5 md:px-10 mt-10 md:mt-16"
              :class="props.class"
     >
         <slot/>
