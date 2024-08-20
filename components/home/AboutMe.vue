@@ -1,10 +1,11 @@
 <script setup lang="ts">
 
 import SectionHeader from "~/components/utils/SectionHeader.vue";
+import Scaffold from "~/components/utils/Scaffold.vue";
 </script>
 
 <template>
-    <section class="py-10 font-trebuchet max-w-7xl mx-auto">
+    <Scaffold>
 
         <SectionHeader secondary="Get To Know More" primary="About Me" />
 
@@ -33,7 +34,7 @@ import SectionHeader from "~/components/utils/SectionHeader.vue";
                 <div class="lg:h-96 lg:w-96 md:h-80 md:w-80 h-72 w-72 bg-emerald-800 rounded-full"></div>
             </div>
         </div>
-    </section>
+    </Scaffold>
 </template>
 
 <style scoped>
