@@ -2,6 +2,7 @@
 
 import SectionHeader from "~/components/utils/SectionHeader.vue";
 import Scaffold from "~/components/utils/Scaffold.vue";
+import BigHeader from "~/components/home/about/BigHeader.vue";
 </script>
 
 <template>
@@ -12,9 +13,9 @@ import Scaffold from "~/components/utils/Scaffold.vue";
         <div class="py-20 grid sm:grid-cols-2 grid-cols-1 place-items-center gap-8">
             <div class="text-left">
                 <div class="w-full flex flex-col items-start lg:text-8xl md:text-6xl text-5xl">
-                    <h1 class="text-left text-wrap w-full md:w-2/3 h-fit font-semibold bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-purple-400 to-purple-300">Learn</h1>
-                    <h1 class="text-left text-wrap w-full md:w-2/3 h-fit font-semibold bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-purple-400 to-purple-300">Build</h1>
-                    <h1 class="text-left text-wrap w-full md:w-2/3 h-fit font-semibold bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-purple-400 to-purple-300">Deploy</h1>
+                    <BigHeader text="Build //"/>
+                    <BigHeader text="Deploy //"/>
+                    <BigHeader text="Maintain //"/>
                 </div>
                 <p class="md:text-lg text-sm text-gray-800 dark:text-gray-200 py-5 font-extralight">
                     Hello there, I'm <strong class="text-primary font-semibold">Ayush</strong>, Software Engineer based in <strong class="text-primary font-semibold">Varanasi, India</strong>.
