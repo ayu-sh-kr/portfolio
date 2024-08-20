@@ -9,7 +9,7 @@ const props = defineProps({
 </script>
 
 <template>
-    <section class="py-10 font-trebuchet max-w-7xl mx-auto"
+    <section class="py-10 font-trebuchet w-full px-3 sm:px-5 md:px-10"
              :class="props.class"
     >
         <slot/>
