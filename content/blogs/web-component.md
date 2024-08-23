@@ -20,7 +20,7 @@ library that automated event handling and component registration for user.
 
 For creating web component we will start of our project on **Vanilla Javascript** and using **Typescript**
 
-
+::big-group
 #### Installation
 
 ::code-group
@@ -28,7 +28,7 @@ For creating web component we will start of our project on **Vanilla Javascript*
 npm install @ayu-sh-kr/dota-core
 ```
 ::
-
+::
 ::big-group
 #### Creating a web component
 
@@ -37,7 +37,6 @@ class **BaseElement**, this is minimum requirement to create a web component
 
 
 ::code-group
-
 ```typescript
 import {BaseElement, Component, HTML} from "@ayu-sh-kr/dota-core/dist";
 
@@ -60,9 +59,10 @@ export class AppHeader extends BaseElement {
 }
 ```
 ::
+
 ::
 
-
+::big-group
 #### Using the Component
 
 To use the web component we must insure that it is registered and which will be taken care by the _@Component_
@@ -72,7 +72,6 @@ file.
 
 
 ::code-group
-
 ```typescript
 import './app-header.component.ts'
 
@@ -80,9 +79,8 @@ document.getElementById('#app')!.innerHTML = `
     <app-header/>
 `
 ```
-
 ::
-
+::
 
 ::code-group
 
@@ -92,8 +90,53 @@ document.getElementById('#app')!.innerHTML = `
     <script type="module" src="./app.header.component.ts"></script>
 </body>
 ```
+::
 
+::big-group
 #### Method calling
 
 You should be wondering how can we call methods with this style of component creations. As the Dota-Core
 uses **Vanilla Js** under the hood you can call method by binding them to their called element.
+
+To bind a method we use event binding.
+
+::code-group
+```typescript
+
+let element = document.getElementById('#id');
+element.addEventListener('click', () => {
+    console.log('clicked')
+})
+```
+::
+
+
+**Dota-Core** working on the above principle provides a very neat way to bind events to the method. They provide **@BindEvent**
+decorator to achieve the same, just decorate the method you want to bind and event to and provide the _event_ and _id_ as **object** to it.
+Also give the element that you want to bind the event an **id**
+
+::code-group
+```typescript
+import {BaseElement, Component, HTML, BindEvent} from "@ayu-sh-kr/dota-core/dist";
+
+@Component({
+    selector: 'reactive-click',
+    shadow: false
+})
+export class ReactiveClick extends BaseElement {
+    
+    @BindEvent({event: 'click', id: '#button'})
+    handleClick() {
+        console.log('Clicked')
+    }
+    
+    render() {
+        return `
+            <button id="button">Click Me</button>
+        `
+    }
+    
+}
+```
+::
+::
