@@ -1,9 +1,12 @@
 <script setup lang="ts">
 
+import STYLE from "~/app.style";
+const { tag } = STYLE;
+
 </script>
 
 <template>
-    <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-dark mt-10">
+    <h1 :class="`${tag?.base} ${tag?.h1}`">
         <slot/>
     </h1>
 </template>
