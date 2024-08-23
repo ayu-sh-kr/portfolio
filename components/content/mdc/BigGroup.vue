@@ -3,7 +3,7 @@
 </script>
 
 <template>
-<div class="my-10">
+<div class="mt-16">
     <slot/>
 </div>
 </template>
