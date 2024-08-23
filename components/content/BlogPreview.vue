@@ -1,8 +1,8 @@
 <script setup lang="ts">
 
-import AppParagraph from "~/components/utils/AppParagraph.vue";
 import type {BlogPreview} from "~/app";
 import HashTag from "~/components/content/HashTag.vue";
+import PreviewHeader from "~/components/content/PreviewHeader.vue";
 
 const props = defineProps({
     blog: {
@@ -22,8 +22,8 @@ const dateTime = computed(() => {
     <NuxtLink :to="blog._path" v-if="blog.published">
         <div class="p-4 rounded-lg hover:bg-gray-200/50 dark:hover:bg-gray-800/40 bg-white dark:bg-gray-900 shadow-lg transition-all space-y-2 my-10">
             <UBadge color="emerald" variant="soft">{{dateTime}}</UBadge>
-            <AppParagraph tag="h3" class="text-2xl font-semibold">{{ blog.title }}</AppParagraph>
-            <AppParagraph look="paragraph" class="group-hover:text-gray-200">{{ blog.description }}</AppParagraph>
+            <PreviewHeader :text="blog.title" />
+            <Paragraph class="group-hover:text-gray-200">{{ blog.description }}</Paragraph>
             <div class="flex gap-x-5">
                 <HashTag v-for="(topic, index) in blog.topics" :key="index" :tag="topic"/>
             </div>
