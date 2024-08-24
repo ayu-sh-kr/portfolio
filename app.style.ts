@@ -1,4 +1,4 @@
-import type {AppStyle, Tag, TagBase, TagStyle} from "~/app";
+import type {AppStyle, Tag} from "~/app";
 
 const STYLE: Partial<AppStyle> = {
     tag: {
