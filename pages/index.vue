@@ -7,10 +7,12 @@ import AppServices from "~/components/home/AppServices.vue";
 </script>
 
 <template>
-    <AppHero/>
-    <AboutMe/>
-    <AppServices/>
-    <AppAbstract/>
+    <NuxtLayout>
+        <AppHero/>
+        <AboutMe/>
+        <AppServices/>
+        <AppAbstract/>
+    </NuxtLayout>
 </template>
 
 <style scoped>

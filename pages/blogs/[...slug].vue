@@ -21,14 +21,16 @@ function resolveSlug(path: string) {
 </script>
 
 <template>
-    <Scaffold class="mx-auto max-w-[95rem]">
-        <BackButton/>
-        <ParagraphDecoration class="mt-4"/>
-        <H2 tag="h2" look="heading">{{data?.title}}</H2>
-        <article class="mt-5">
-            <ContentRenderer :value="data!"/>
-        </article>
-    </Scaffold>
+    <NuxtLayout>
+        <Scaffold class="mx-auto max-w-[95rem]">
+            <BackButton/>
+            <ParagraphDecoration class="mt-4"/>
+            <H2 tag="h2" look="heading">{{data?.title}}</H2>
+            <article class="mt-5">
+                <ContentRenderer :value="data!"/>
+            </article>
+        </Scaffold>
+    </NuxtLayout>
 </template>
 
 <style scoped>
