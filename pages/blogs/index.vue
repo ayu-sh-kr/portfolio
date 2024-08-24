@@ -19,15 +19,15 @@ const page = ref();
             <AppParagraph look="heading" tag="h1" class="mt-4">
                 Blogs
             </AppParagraph>
-            <AppParagraph class="mt-8" look="subParagraph">
+            <Paragraph class="mt-8">
                 Below you can find a list of my blogs that I have written on tech, trend and programming.
                 Feel free to read them and if you have any suggestions for me please fill the feedback form so that I can improve my content and
                 provide you with better insights.
-            </AppParagraph>
+            </Paragraph>
             <div class="space-y-8 md:space-y-0 mt-8">
                 <ContentList :query="query" v-slot="{ list }">
                     <BlogPreview v-for="entry in list" :key="entry._path" :blog="(entry as Blog)"/>
-                    <UPagination v-model="page" :page-count="10" :total="list.length"  class="py-10"/>
+                    <UPagination v-model="page" :page-count="5" :total="list.length"  class="py-10"/>
                 </ContentList>
             </div>
         </Scaffold>
