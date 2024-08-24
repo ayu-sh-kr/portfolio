@@ -13,7 +13,7 @@ const {tag} = STYLE;
 </script>
 
 <template>
-    <h4 :class="`${tag?.base} ${tag?.h4} ${props.class}` ?? ''"
+    <h4 :class="`${tag?.base} ${tag?.h4} ${props.class ?? ''}`"
     >
         <slot/>
     </h4>
