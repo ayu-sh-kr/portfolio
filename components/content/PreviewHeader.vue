@@ -11,10 +11,19 @@ defineProps({
 
 <template>
     <div>
-        <H4 class="relative inline-flex items-center before:content-[''] before:h-10 before:bg-gray-900/60  before:w-1 before:mr-4">{{ text }}</H4>
+        <H4 class="preview-header">{{ text }}</H4>
     </div>
 </template>
 
 <style scoped>
+
+.preview-header {
+    @apply relative inline-flex items-center
+}
+
+.preview-header::before {
+    @apply h-10 bg-gray-900/60 dark:bg-gray-100/60 w-1 mr-4;
+    content: '';
+}
 
 </style>
