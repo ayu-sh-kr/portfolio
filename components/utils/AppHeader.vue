@@ -102,7 +102,7 @@ function handleScroll() {
 </template>
 
 <style scoped>
-
+@import "tailwindcss/utilities";
 .active-header {
     @apply text-transparent bg-clip-text bg-gradient-to-r from-purple-300 via-purple-500 to-purple-700;
 }
@@ -122,25 +122,27 @@ function handleScroll() {
 
 .link::before,
 .link::after {
+    @apply rounded-xl;
     content: '';
     position: absolute;
     bottom: 0;
     width: 0;
-    height: 2px; /* Adjust as needed */
+    height: 3px; /* Adjust as needed */
     background-color: currentColor; /* Use the current text color */
     transition: width 0.3s ease;
+    box-shadow: 0 0 15px theme('colors.purple.400');
 }
 
 .link::before {
-    left: 50%;
+    left: 0;
 }
 
 .link::after {
-    right: 50%;
+    right: 0;
 }
 
 .link:hover::before,
 .link:hover::after {
-    width: 50%;
+    width: 60%;
 }
 </style>

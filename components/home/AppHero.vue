@@ -35,7 +35,7 @@ onMounted(() => {
     <section class="relative">
         <div class="absolute inset-1 bg-transparent min-h-screen text-center flex flex-col items-center justify-center font-trebuchet text-dark gap-y-5 z-10">
             <h1 class="text-8xl font-semibold">
-                I'm <span class="text-primary">Ayush Jaiswal</span>
+                I'm <span class="text-primary text-glow">Ayush Jaiswal</span>
             </h1>
             <span ref="view" class="text-xl"></span>
         </div>
@@ -44,7 +44,7 @@ onMounted(() => {
 </template>
 
 <style scoped>
-
+@import "tailwindcss/utilities";
 .animate-start {
     animation: top-down 2s ease-in-out;
 }
@@ -70,5 +70,9 @@ onMounted(() => {
         transform: translateY(50%);
     }
 
+}
+
+.text-glow {
+    text-shadow: 0 0 25px theme('colors.purple.500');
 }
 </style>
