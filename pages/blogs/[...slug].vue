@@ -25,7 +25,7 @@ function resolveSlug(path: string) {
         <Scaffold class="mx-auto max-w-[95rem]">
             <BackButton/>
             <ParagraphDecoration class="mt-4"/>
-            <H2 tag="h2" look="heading">{{data?.title}}</H2>
+            <H2>{{data?.title}}</H2>
             <article class="mt-5">
                 <ContentRenderer :value="data!"/>
             </article>
