@@ -93,6 +93,42 @@ document.getElementById('#app')!.innerHTML = `
 ::
 
 ::big-group
+#### Property Binding
+Properties are very important aspect of web component, and they hold the state of the component. We provide value to the properties of the component
+as an attribute to the component. To bind the element attribute to it property we use the decorator **@Property**
+
+::code-group
+```typescript
+import {BaseElement, Component, Property} from "@ayu-sh-kr/dota-core/dist";
+
+@Component({
+    selector: 'property-example',
+    shadow: false
+})
+export class PropertyExample extends BaseElement {
+    
+    @Property({name: 'data'})
+    data!: string;
+    
+    render() {
+        return `
+            
+        `
+    }
+
+}
+```
+::
+
+::code-group
+```html
+<property-example data="Some Value"/>
+```
+::
+
+::
+
+::big-group
 #### Method calling
 
 You should be wondering how can we call methods with this style of component creations. As the Dota-Core
@@ -139,4 +175,113 @@ export class ReactiveClick extends BaseElement {
 }
 ```
 ::
+::
+
+::big-group
+#### Event Emitter
+Event is very important aspect of any component not just the web component, through events components communicate and update their state.
+To deal with events, **Dota-Core** provides **EventEmitter** class to emit custom events.
+
+Event emitted can be of two level.
+1. **Window** (Global Scope)
+2. **Root** (Component Scope)
+
+To Emit events we first need an **EventEmitter** object which can be initialized with a decorator or directly
+
+::code-group
+```typescript
+import {EventEmitter, BaseElement, Event} from "@ayu-sh-kr/dota-core/dist";
+
+export class EventExample extends BaseElement {
+    @Event
+    event!: EventEmitter<string>
+}
+```
+::
+
+OR
+
+::code-group
+```typescript
+import {EventEmitter, BaseElement, Event} from "@ayu-sh-kr/dota-core/dist";
+export class EventExample extends BaseElement {
+
+    @Event
+    event! = new EventEmitter('onEvent');
+
+    render() {
+        return `
+            
+        `
+    }
+
+}
+```
+::
+
+Example of the EventEmitter
+
+::code-group
+```typescript
+import {BaseElement, Component, EventEmitter, Event} from "@ayu-sh-kr/dota-core/dist";
+
+@Component({
+    selector: 'emit-example',
+    shadow: false
+})
+export class EmitExample extends BaseElement {
+
+    @Event
+    change!: EventEmitter<string>
+    
+    @BindEvent({event: 'click', id: '#button'})
+    emitEvent() {
+        this.change.emit('data', this) // event is root level
+        this.change.emit('data') // event is global scoped
+    }
+
+    render() {
+        return `
+            <button id="button">Click Me</button>
+        `
+    }
+
+}
+```
+::
+::
+
+::big-group
+#### Event Listeners
+When a component emits some event then it should be listened by some other components. Listening to event similar to Binding the event to a method
+which will react to certain occurrence of the event.
+
+To make method listen to some event we will decorate it with **@EventListener** which takes an object stating _event name_ and _event type_
+
+::code-group
+```typescript
+import {BaseElement, Component, EventListener} from "@ayu-sh-kr/dota-core/dist";
+import './emit-example.component.ts'
+
+@Component({
+    selector: 'listen-example',
+    shadow: false
+})
+export class ListenExample extends BaseElement {
+    
+    @EventListener({name: 'onChange', type: EventType.ROOT})
+    listenEvent() {
+        console.log('Do Something')
+    }
+
+    render() {
+        return `
+            <emit-example/>
+        `
+    }
+
+}
+```
+::
+
 ::
