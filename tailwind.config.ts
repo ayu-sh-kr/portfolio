@@ -4,7 +4,7 @@ import {type Config} from "tailwindcss"
 export default <Partial<Config>>{
   darkMode: 'class',
   content: [
-    ".{ts, js}",
+    "./app.style.ts",
     "./components/**/*.{js,vue,ts}",
     "./layouts/**/*.vue",
     "./pages/**/*.vue",
