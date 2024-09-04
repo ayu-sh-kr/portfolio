@@ -32,5 +32,5 @@ declare interface TagBase {
 declare type Tag = TagBase & TagStyle
 
 declare interface AppStyle {
-    tag: Tag
+    tag: Tag,
 }
